@@ -18,17 +18,21 @@ app.set('view engine', 'html');
 app.use(express.static('public'));
 
 app.use(WebpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath,
-  stats: {colors: true}
+    publicPath: config.output.publicPath,
+    stats: {
+        colors: true
+    }
 }))
 app.use(WebpackHotMiddleware(compiler))
 
 var router = express.Router()
-router.get('/', function (req, res, next) {
-  res.render('index', {message: 'Hey there!'});
+router.get('/', function(req, res, next) {
+    res.render('index', {
+        message: 'Hey there!'
+    });
 })
 app.use(router)
 
-app.listen(8081, function () {
-  console.log('Listening on 8081')
+app.listen(8081, function() {
+    console.log('Listening on 8081')
 })

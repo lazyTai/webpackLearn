@@ -13,7 +13,7 @@ var webpackConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "我的webnpack配置几把",
-      filename:'assets/index.html'
+      filename:'index.html'
     })
   ]
 }
