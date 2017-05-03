@@ -2,7 +2,6 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import store from './store/'
 import router from './router'
 import './config/rem'
 
@@ -13,8 +12,20 @@ if ('addEventListener' in document) {
   })
 }
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
+/*开始使用*/
+import Vuex from 'vuex';
+Vue.use(Vuex)
+const state = {
+  home: "home",
+  about: "about",
+  user: "user",
+}
+
+var store = new Vuex.Store({
+  state
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
